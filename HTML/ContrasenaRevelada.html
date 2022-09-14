@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la página</title>
+</head>
+<body>
+    <label for="password">Digita la contraseña</label>
+    <input type="password" id="password" autofocus>
+    <p id=mensaje style="display: none;">La contraseña debe contener 8 caracteres</p>
+
+    <script>
+        // const p = document.createElement('p')
+        // const error=document.createTextNode('La contraseña debe contener 8 caracteres')
+        // p.appendChild(error)
+        const mensaje=document.getElementById('mensaje')
+        const password=document.getElementById('password')
+        password.addEventListener('keydown',()=>{
+            if(password.value.length<7){
+                mensaje.style.display="block"
+                    setTimeout(() => {
+                        mensaje.style.display="none"
+                    }, 1000);
+            //     document.body.appendChild(p)
+                
+            // } else{
+            //     document.body.removeChild(p)
+            // }
+        }})
+        
+        password.addEventListener('mouseenter',()=>{
+           password.setAttribute('type','text')}
+        )
+
+    
+
+        password.addEventListener('mouseout',()=>{
+            password.setAttribute('type','password')}
+        )
+    </script>
+</body>
+</html>
